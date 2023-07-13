@@ -105,11 +105,13 @@ class _HomePageState extends State<HomePage> {
                             ),
                             IconButton(
                               onPressed: () {
+
                                 deleteDonor(donorSnap.id);
                               },
                               icon: const Icon(Icons.delete),
                               iconSize: 30,
                               color: Colors.red,
+
                             ),
                           ],
                         )
