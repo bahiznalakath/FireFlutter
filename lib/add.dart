@@ -36,59 +36,61 @@ class _AddUserState extends State<AddUser> {
         backgroundColor: Colors.redAccent,
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: donerName,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                label: Text('Donor Name'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: donerName,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  label: Text('Donor Name'),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: doneerPhone,
-              keyboardType: TextInputType.number,
-              maxLength: 10,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                label: Text('Phone Number'),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: doneerPhone,
+                keyboardType: TextInputType.number,
+                maxLength: 10,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  label: Text('Phone Number'),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: DropdownButtonFormField(
-              decoration: const InputDecoration(
-                label: Text("select blood group")
-              ),
-                items:bloodGroups
-                    .map((e) => DropdownMenuItem(
-                child: Text(e),
-                    value: e,
-                ))
-                    .toList(),
-                onChanged: (val){
-              selectGroup=val as String?;
-            }),
-          ),
-          ElevatedButton(
-              onPressed: (){
-            addDoner();
-            Navigator.pop(context);
-          },
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all( const Size(double.infinity, 50)),
-                backgroundColor: MaterialStateProperty.all(Colors.red)
-              ),
-              child: const Text('Submit',style: TextStyle(
-                fontSize: 20
-              ),))
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DropdownButtonFormField(
+                decoration: const InputDecoration(
+                  label: Text("select blood group")
+                ),
+                  items:bloodGroups
+                      .map((e) => DropdownMenuItem(
+                  child: Text(e),
+                      value: e,
+                  ))
+                      .toList(),
+                  onChanged: (val){
+                selectGroup=val as String?;
+              }),
+            ),
+            ElevatedButton(
+                onPressed: (){
+              addDoner();
+              Navigator.pop(context);
+            },
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all( const Size(double.infinity, 50)),
+                  backgroundColor: MaterialStateProperty.all(Colors.red)
+                ),
+                child: const Text('Submit',style: TextStyle(
+                  fontSize: 20
+                ),))
+          ],
+        ),
       ),
     );
   }

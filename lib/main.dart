@@ -23,18 +23,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       routes:{
-        '/':(context)=>HomePage(),
-        '/add':(context)=>AddUser(),
-        '/update':(context)=>UpdateUser(),
+        '/':(context)=>const HomePage(),
+        '/add':(context)=>const AddUser(),
+        '/update':(context)=>const UpdateUser(),
       } ,
       initialRoute: '/',
 
-      /*theme: ThemeData(
+      theme: ThemeData(
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home:  HomePage(),*/
+
       debugShowCheckedModeBanner: false,
     );
   }
